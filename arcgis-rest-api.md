@@ -130,7 +130,7 @@ https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/Feat
 
 ## Verdere informatie
 
-Meer informatie over de query parameters voor het bevragen van een laag in een service: https://developers.arcgis.com/rest/services-reference/query-feature-service-layer-.htm#GUID-62EE7495-8688-4BD0-B433-89F7E4476673
+Raadpleeg de ArcGIS REST API documentatie voor [meer informatie over query parameters](https://developers.arcgis.com/rest/services-reference/query-feature-service-layer-.htm#GUID-62EE7495-8688-4BD0-B433-89F7E4476673)
 
 
 
