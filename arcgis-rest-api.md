@@ -79,6 +79,13 @@ Request:
 
 
 ## Totale energieproductie door kleinverbruikers
+
+Met de parameter `outStatistics` kun je statistieken opvragen. Per statistiek geef je aan 
+* welk type statistiek je wilt (bijvoorbeeld `max`, `count` of `sum`), 
+* voor welk attribuut je de statistiek wil laten berekenen en 
+* wat de naam is van het attribuut waarin je het resultaat van de berekening wilt opslaan.
+
+Query-parameters:    
 ```
     where           1=1
     outStatistics   [{"statisticType":"sum",       
@@ -87,7 +94,8 @@ Request:
     f               pjson
 ```	
 Request:    
-https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1%3D1&outStatistics=%5B%7B%22statisticType%22%3A%22sum%22%2C%0D%0A+%22onStatisticField%22%3A%22opbrengst_kv_mwh%22%2C%0D%0A+%22outStatisticFieldName%22%3A%22tot_opbrengst_kv_mw%22%7D%5D&f=pjson
+https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1=1&outStatistics=[{"statisticType":"sum","onStatisticField":"opbrengst_kv_mwh","outStatisticFieldName":"tot_opbrengst_kv_mw"}]&f=pjson
+
 
 Request 7: binnen bounding box
  
