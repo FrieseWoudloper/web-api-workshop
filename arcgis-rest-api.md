@@ -23,7 +23,7 @@ Query-parameters:
     f		geojson	
 ```
 	
-Request:	
+Request:<br>
 https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1=1&f=geojson
 
 ## Request 2: D jaarlijkse productie door kleinverbruikers per gemeente in JSON-formaat (zónder geometrie)
