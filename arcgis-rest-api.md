@@ -1,10 +1,11 @@
-In deze oefening zijn we geïnteresseerd in de energieproductie door kleinverbruikers per gemeente. 
+In deze oefeningen vragen we gegevens op via Zonnewijzer service:    
+https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer   
 
-Dit is de vierde laag in de Zonnewijzer service. De laag heeft identificatienummer (ID) 3. Dit kun je checken in de [beschrijving van de service](https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer).    
+Als je bovenstaande link volgt, krijg je een beschrijving. Dan kun je zien dat de Zonnewijzer service meer dan twintig kaartlagen ontsluit. 
 
-De URL voor bevragingen op deze kaartlaag is:    
-https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3    
-
+We zijn geïnteresseerd in de energieproductie door kleinverbruikers per gemeente. Dit is de vierde laag in de Zonnewijzer service. De laag heeft identificatienummer (ID) 3. 
+De URL voor bevragingen op deze kaartlaag wordt dan:    
+https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3      
 Merk op de dat de URL van de Zonnewijzer service is uitgebreid met het ID van de laag die we willen bevragen!    
 
 Voor een geldig request, moeten we aan de URL ook nog query-parameters toevoegen.    
@@ -12,15 +13,14 @@ Voor een geldig request, moeten we aan de URL ook nog query-parameters toevoegen
 ## Request 1: De complete dataset in GeoJSON-formaat
 
 Query-parameters:
+```
     where 	1=1	
     f		geojson	
-
-Met de `where`-parameter kun je rijen filteren op attribuutwaarden. De parameter is verplicht. Als je alle gegevens wilt, geef je de waarde `1=1` op. Na HTML-encoding ziet dit er uit als `1%3D1`.
+```
+Met de `where`-parameter kun je rijen filteren op attribuutwaarden. De parameter is verplicht. Als je alle gegevens wilt, geef je de waarde `1=1` op. 
 	
 Request:	
-
 https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1=1&f=geojson
-
 
 ## Request 2: D jaarlijkse productie door kleinverbruikers per gemeente in JSON-formaat (zónder geometrie)
 

@@ -4,9 +4,4 @@ De ArcGIS REST API is niet alleen geschikt voor het tonen van gegevens in een ka
 
 Voor een overzicht van alle gegevens die Zuid-Holland aanbiedt via de ArcGIS REST API, raadpleeg je de [services directory](https://geoservices.zuid-holland.nl/arcgis/rest/services). 
 
-Als je meer wilt weten over de services directory, dan is dit een goede plek om te beginnen: (Get started with the services directory)[https://developers.arcgis.com/rest/services-reference/get-started-with-the-services-directory.htm]   
-
-In de oefeningen beperken we ons tot de Zonnewijzer service:    
-https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer   
-
-Als je bovenstaande link volgt, krijg je een beschrijving van de Zonnewijzer service. Dan kun je zien dat de Zonnewijzer service meer dan twintig kaartlagen ontsluit. 
+Als je meer wilt weten over de services directory, dan is dit een goede plek om te beginnen: [Get started with the services directory](https://developers.arcgis.com/rest/services-reference/get-started-with-the-services-directory.htm)
