@@ -96,23 +96,41 @@ Query-parameters:
 Request:    
 https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1=1&outStatistics=[{"statisticType":"sum","onStatisticField":"opbrengst_kv_mwh","outStatisticFieldName":"tot_opbrengst_kv_mw"}]&f=pjson
 
-## Geometrie in RD New van de gemeente met de hoogste energieproductie door kleinverbruikers
+## Geometrie in RD New 
 
 Als je kiest voor het GeoJSON formaat, wordt geometrie automatisch in het WGS84 (EPSG:4326) coordinatenstelsel geretourneerd. Je kunt een ander coördinatenstelsel opgeven met de `outSR` parameter, bijvoorbeeld RD New (EPSG:28992).    
 
 Query-parameters:    
 ```
-    where           1=1
-	havingClause    opbrengst_kv_mwh=max(opbrengst_kv_mwh)                       
+    where           1=1                     
     outSR           28992
     f               geojson
 ```	
 
-https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1=1&outFields=gm_naam,opbrengst_kv_mwh&outSR=28992&havingClause=opbrengst_kv_mwh=max(opbrengst_kv_mwh)&f=geojson
+https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1=1&outSR=28992&f=geojson
 
-Request 7: binnen bounding box
- 
+## Gemeente waarin het punt met breedtegraad 52.0795985 en lengtegraad 4.313273 valt
+
+Spoiler: dit zijn de GPS-coördinaten van het Binnenhof.
+
+Het is mogelijk om een ruimtelijke analyse uit te voeren met een API request.    
+Dan moet je eerst een _input geometry_ specificeren. Dat doe je met behulp van de parameters `geometryType`, `geometry` en `inSR`. Zij bevatten respectievelijk het type geometrie, de coördinaten en het coördinatenstelsel.    
+
+Query-parameters:    
+```
+    geometryType      esriGeometryPoint 
+    geometry          4.313273,52.0795985
+    inSR              4326
+    spatialRel        esriSpatialRelWithin
+```
+
+Request:    
+https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1=1&geometryType=esriGeometryPoint&geometry=4.313273,52.0795985&inSR=4326&spatialRel=esriSpatialRelWithin&f=geojson
+
+## Verdere informatie
+
 Documentatie: https://developers.arcgis.com/rest/services-reference/query-feature-service-layer-.htm#GUID-62EE7495-8688-4BD0-B433-89F7E4476673
+
 
 
 
