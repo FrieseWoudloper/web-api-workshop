@@ -57,7 +57,7 @@ Request:
 
 ## Top 3 van gemeentes met de hoogste jaarlijkse energieproductie door kleinverbruikers 
 
-Met de `orderByFields` parameter kun je aangeven op welke attributen je wilt sorteren, oplopend (`ASC`) of aflopend ('DESC').    
+Met de `orderByFields` parameter kun je aangeven op welke attributen je wilt sorteren, oplopend (`ASC`) of aflopend (`DESC`).    
 
 Het aantal rijen dat de service retourneert, kun je beperken door een waarde op te geven voor `resultRecordCount`.    
 
@@ -65,13 +65,13 @@ Query-parameters:
 ```
     where              1=1
     outFields	       gm_naam,opbrengst_kv_mwh
-    returnGeometry	   false
-    orderByFields	   opbrengst_kv_mwh DESC
+    returnGeometry     false
+    orderByFields      opbrengst_kv_mwh DESC
     resultRecordCount  3
     f	               json
 ```	
 Request:    
-https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1%3D1&outFields=gm_naam%2Copbrengst_kv_mwh&returnGeometry=false&orderByFields=opbrengst_kv_mwh+DESC&resultRecordCount=3&f=json
+https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1=1&outFields=gm_naam%2Copbrengst_kv_mwh&returnGeometry=false&orderByFields=opbrengst_kv_mwh+DESC&resultRecordCount=3&f=json
 
 
 ## Totale energieproductie door kleinverbruikers voor alle gemeenten in de dataset
