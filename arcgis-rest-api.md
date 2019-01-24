@@ -23,7 +23,7 @@ Query-parameters:
     f		geojson	
 ```
 	
-Request:<br>
+Request:    
 https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1=1&f=geojson
 
 ## De jaarlijkse energieproductie door kleinverbruikers per gemeente in JSON (zónder geometrie)    
@@ -35,18 +35,18 @@ Met de parameter `returnGeometry` bepaal je of de dataset die de service retourn
 
 Query-parameters:
 ```
-    where	        1=1    
+    where	    1=1    
     outFields	    gm_naam,opbrengst_kv_mwh	
     returnGeometry  false	
     f               json
 ```
-Request:<br>
+Request:    
 https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1=1&outFields=gm_naam,opbrengst_kv_mwh&returnGeometry=false&f=json
 
-## Alle gemeentes met een negatieve (!) energieproductie door kleinverbruikers
+## Gemeentes met een negatieve (!) energieproductie door kleinverbruikers
 Query-parameters:
 ```
-    where	        opbrengst_kv_mwh<0    
+    where	    opbrengst_kv_mwh<0    
     outFields	    gm_naam,opbrengst_kv_mwh	
     returnGeometry  false
     f               json
