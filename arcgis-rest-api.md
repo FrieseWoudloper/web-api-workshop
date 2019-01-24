@@ -45,7 +45,7 @@ Query-parameters:
 Request:    
 https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1=1&outFields=gm_naam,opbrengst_kv_mwh&returnGeometry=false&f=pjson
 
-## Gemeentes met een negatieve(!) energieproductie door kleinverbruikers
+## Gemeentes met een negatieve (!) energieproductie door kleinverbruikers
 Query-parameters:
 ```
     where           opbrengst_kv_mwh<0    
@@ -63,6 +63,8 @@ Met de `orderByFields` parameter kun je aangeven op welke attributen je wilt sor
 
 Het aantal rijen dat de service retourneert, kun je beperken door een waarde op te geven voor `resultRecordCount`.    
 
+Door eerst aflopend te sorteren op energieproductie en vervolgens alleen de eerste drie rijen op te vragen, krijg je de top 3.    
+
 Query-parameters:
 ```
     where              1=1
@@ -76,14 +78,16 @@ Request:
 [https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1=1&outFields=gm_naam,opbrengst_kv_mwh&returnGeometry=false&orderByFields=opbrengst_kv_mwh DESC&resultRecordCount=3&f=json](https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1=1&outFields=gm_naam,opbrengst_kv_mwh&returnGeometry=false&orderByFields=opbrengst_kv_mwh+DESC&resultRecordCount=3&f=json)
 
 
-## Totale energieproductie door kleinverbruikers voor alle gemeenten in de dataset
+## Totale energieproductie door kleinverbruikers
 ```
     where           1=1
-    outStatistics	[{"statisticType":"sum", "onStatisticField":"opbrengst_kv_mwh", "outStatisticFieldName":"tot_opbrengst_kv_mw"}]
-    f	json
+    outStatistics	[{"statisticType":"sum", 
+	                  "onStatisticField":"opbrengst_kv_mwh", 
+					  "outStatisticFieldName":"tot_opbrengst_kv_mw"}]
+    f               pjson
 ```	
 Request:    
-https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1%3D1&outStatistics=%5B%7B%22statisticType%22%3A%22sum%22%2C%0D%0A+%22onStatisticField%22%3A%22opbrengst_kv_mwh%22%2C%0D%0A+%22outStatisticFieldName%22%3A%22tot_opbrengst_kv_mw%22%7D%5D&f=json
+https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1%3D1&outStatistics=%5B%7B%22statisticType%22%3A%22sum%22%2C%0D%0A+%22onStatisticField%22%3A%22opbrengst_kv_mwh%22%2C%0D%0A+%22outStatisticFieldName%22%3A%22tot_opbrengst_kv_mw%22%7D%5D&f=pjson
 
 Request 7: binnen bounding box
  
