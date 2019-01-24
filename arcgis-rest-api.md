@@ -31,17 +31,19 @@ https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/Feat
 Standaard worden alle attributen in de dataset geretourneerd. Ben je alleen geïnteresseerd in specifieke attributen, dan kun je dat aangeven in de `outFields` parameter. Welke attributen beschikbaar zijn, zie je in de [beschrijving van de laag](    
 ).    
 
-Met de parameter `returnGeometry` bepaal je of de dataset die de service retourneert wel (`true`) of geen (`false`) geometrie bevat.    
+Met de parameter `returnGeometry` bepaal je of de dataset die de service retourneert wel (`true`) of geen (`false`) geometrie bevat.         
+
+Met `f=pjson` geeft de service het resultaat terug in 'pretty' JSON. Dat maakt het bestand beter leesbaar.    
 
 Query-parameters:
 ```
     where           1=1    
     outFields	    gm_naam,opbrengst_kv_mwh	
     returnGeometry  false	
-    f               json
+    f               pjson
 ```
 Request:    
-https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1=1&outFields=gm_naam,opbrengst_kv_mwh&returnGeometry=false&f=json
+https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1=1&outFields=gm_naam,opbrengst_kv_mwh&returnGeometry=false&f=pjson
 
 ## Gemeentes met een negatieve(!) energieproductie door kleinverbruikers
 Query-parameters:
@@ -49,10 +51,10 @@ Query-parameters:
     where           opbrengst_kv_mwh<0    
     outFields	    gm_naam,opbrengst_kv_mwh	
     returnGeometry  false
-    f               json
+    f               pjson
 ```
 Request:    
-[https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=opbrengst_kv_mwh<0&outFields=gm_naam,opbrengst_kv_mwh&returnGeometry=false&f=json](https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=opbrengst_kv_mwh<0&outFields=gm_naam,opbrengst_kv_mwh&returnGeometry=false&f=json)
+[https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=opbrengst_kv_mwh<0&outFields=gm_naam,opbrengst_kv_mwh&returnGeometry=false&f=json](https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=opbrengst_kv_mwh<0&outFields=gm_naam,opbrengst_kv_mwh&returnGeometry=false&f=pjson)
 
 
 ## Top 3 van gemeentes met de hoogste jaarlijkse energieproductie door kleinverbruikers 
