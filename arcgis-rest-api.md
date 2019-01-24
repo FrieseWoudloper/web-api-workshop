@@ -9,9 +9,9 @@ De URL voor bevragingen op deze kaartlaag wordt dan:
 https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3      
 Merk op de dat de URL van de Zonnewijzer service is uitgebreid met het ID van de laag die we willen bevragen!    
 
-Voor een geldig request, moeten we aan de URL ook nog query-parameters toevoegen.    
+Voor een geldig request, moeten we aan de URL ook nog query-parameters toevoegen. Hierna volgen een aantal voorbeelden van requests.    
 
-## Request 1: De complete dataset in GeoJSON-formaat
+## De complete dataset in GeoJSON-formaat
 
 Met de `where` parameter kun je rijen filteren op attribuutwaarden. De parameter is verplicht. Als je alle gegevens wilt, geef je de waarde `1=1` op. 
 
@@ -26,24 +26,33 @@ Query-parameters:
 Request:<br>
 https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1=1&f=geojson
 
-## Request 2: D jaarlijkse productie door kleinverbruikers per gemeente in JSON-formaat (zónder geometrie)
+## De jaarlijkse energieproductie door kleinverbruikers per gemeente in JSON-formaat (zónder geometrie!)    
+
+Standaard worden alle attributen in de dataset geretourneerd. Ben je alleen geïnteresseerd in specifieke attributen, dan kun je dat aangeven in de `outFields` parameter. Welke attributen beschikbaar zijn, zie je in de [beschrijving van de laag](    
+).    
+
+Met de parameter `returnGeometry` geef je aan of de dataset die de service retourneert wel (`true`) of geen (`false`) geometrie moet bevatten.    
 
 Query-parameters:
-    where	1=1
-    outFields	gm_naam,opbrengst_kv_mwh	
-    returnGeometry false	
-    f       json
-
+```
+    where	        1=1
+    outFields	    gm_naam,opbrengst_kv_mwh	
+    returnGeometry  false	
+    f               json
+```
 Request:
 https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1=1&outFields=gm_naam,opbrengst_kv_mwh&returnGeometry=false&f=json
 
-Request 3: Alle gemeentes met een jaarlijkse productie door kleinverbruikers minder dan nul. 
-where	1=1
-outFields	gm_naam,opbrengst_kv_mwh	
-returnGeometry false
-f       json
-
-https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=opbrengst_kv_mwh<0&outFields=gm_naam,opbrengst_kv_mwh&returnGeometry=false&f=json
+## Alle gemeentes met een jaarlijkse productie door kleinverbruikers minder dan nul. 
+Query-parameters:
+```
+    where	        opbrengst_kv_mwh<0
+    outFields	    gm_naam,opbrengst_kv_mwh	
+    returnGeometry  false
+    f               json
+```
+Request:
+[https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=opbrengst_kv_mwh<0&outFields=gm_naam,opbrengst_kv_mwh&returnGeometry=false&f=json](https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=opbrengst_kv_mwh<0&outFields=gm_naam,opbrengst_kv_mwh&returnGeometry=false&f=json)
 
 
 Request 4: Vul het vorige request aan, zodat ook de gemeentegrenzen in het WGS84 (EPSG 4326) coordinatenstelsel worden opgevraagd.
