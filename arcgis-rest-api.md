@@ -96,16 +96,23 @@ Query-parameters:
 Request:    
 https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1=1&outStatistics=[{"statisticType":"sum","onStatisticField":"opbrengst_kv_mwh","outStatisticFieldName":"tot_opbrengst_kv_mw"}]&f=pjson
 
+## Geometrie in RD New van de gemeente met de hoogste energieproductie door kleinverbruikers
+
+Als je kiest voor het GeoJSON formaat, wordt geometrie automatisch in het WGS84 (EPSG:4326) coordinatenstelsel geretourneerd. Je kunt een ander coördinatenstelsel opgeven met de `outSR` parameter, bijvoorbeeld RD New (EPSG:28992).    
+
+Query-parameters:    
+```
+    where           1=1
+	havingClause    opbrengst_kv_mwh=max(opbrengst_kv_mwh)                       
+    outSR           28992
+    f               geojson
+```	
+
+https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1=1&outFields=gm_naam,opbrengst_kv_mwh&outSR=28992&havingClause=opbrengst_kv_mwh=max(opbrengst_kv_mwh)&f=geojson
 
 Request 7: binnen bounding box
  
 Documentatie: https://developers.arcgis.com/rest/services-reference/query-feature-service-layer-.htm#GUID-62EE7495-8688-4BD0-B433-89F7E4476673
-
-
-Request 4: Vul het vorige request aan, zodat ook de gemeentegrenzen in het WGS84 (EPSG 4326) coordinatenstelsel worden opgevraagd.
-
-https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=opbrengst_kv_mwh<0&outFields=gm_naam,opbrengst_kv_mwh&outSR=4326&f=geojson
-
 
 
 
