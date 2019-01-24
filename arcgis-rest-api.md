@@ -18,6 +18,7 @@ Query-parameters:
 Met de `where`-parameter kun je rijen filteren op attribuutwaarden. De parameter is verplicht. Als je alle gegevens wilt, geef je de waarde `1=1` op. Na HTML-encoding ziet dit er uit als `1%3D1`.
 	
 Request:	
+
 https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1=1&f=geojson
 
 
