@@ -1,7 +1,7 @@
 In deze oefeningen vragen we gegevens op via de Zonnewijzer service:    
 https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer   
 
-Als je bovenstaande link volgt, krijg je een beschrijving. Dan kun je zien dat de Zonnewijzer service meer dan twintig kaartlagen ontsluit. 
+Als je bovenstaande link volgt, krijg je een beschrijving. Dan kun je zien dat de Zonnewijzer service toegang biedt tot meer dan twintig kaartlagen. 
 
 We zijn geïnteresseerd in de energieproductie door kleinverbruikers per gemeente. Dit is de vierde laag in de Zonnewijzer service. De laag heeft identificatienummer (ID) 3.    
 
@@ -106,15 +106,16 @@ Query-parameters:
     outSR           28992
     f               geojson
 ```	
-
+Request:    
 https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1=1&outSR=28992&f=geojson
 
 ## Gemeente waarin het punt met breedtegraad 52.0795985 en lengtegraad 4.313273 valt
 
 Spoiler: dit zijn de GPS-coördinaten van het Binnenhof.
 
-Het is mogelijk om een ruimtelijke analyse uit te voeren met een API request.    
-Dan moet je eerst een _input geometry_ specificeren. Dat doe je met behulp van de parameters `geometryType`, `geometry` en `inSR`. Zij bevatten respectievelijk het type geometrie, de coördinaten en het coördinatenstelsel.    
+Het is mogelijk om een ruimtelijke analyse uit te voeren met een API request. Dan moet je wel eerst een _input geometry_ specificeren. Dat doe je met behulp van de parameters `geometryType`, `geometry` en `inSR`. Zij bevatten respectievelijk het type geometrie, de coördinaten en het coördinatenstelsel.  
+
+Daarnaast moet je in de parameter `spatialRel` aangeven wat voor soort analyse je wilt doen. Welke ruimtelijke relatie met de input `geometry` is onderdeel van de query? Voorbeelden van ruimtelijke relateis zijn `intersects`, `contains`, `within`, enzovoorts.  
 
 Query-parameters:    
 ```
@@ -129,7 +130,7 @@ https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/Feat
 
 ## Verdere informatie
 
-Documentatie: https://developers.arcgis.com/rest/services-reference/query-feature-service-layer-.htm#GUID-62EE7495-8688-4BD0-B433-89F7E4476673
+Meer informatie over de query parameters voor het bevragen van een laag in een service: https://developers.arcgis.com/rest/services-reference/query-feature-service-layer-.htm#GUID-62EE7495-8688-4BD0-B433-89F7E4476673
 
 
 
