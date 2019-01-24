@@ -1,9 +1,10 @@
-In deze oefeningen vragen we gegevens op via Zonnewijzer service:    
+In deze oefeningen vragen we gegevens op via de Zonnewijzer service:    
 https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer   
 
 Als je bovenstaande link volgt, krijg je een beschrijving. Dan kun je zien dat de Zonnewijzer service meer dan twintig kaartlagen ontsluit. 
 
-We zijn geïnteresseerd in de energieproductie door kleinverbruikers per gemeente. Dit is de vierde laag in de Zonnewijzer service. De laag heeft identificatienummer (ID) 3. 
+We zijn geïnteresseerd in de energieproductie door kleinverbruikers per gemeente. Dit is de vierde laag in de Zonnewijzer service. De laag heeft identificatienummer (ID) 3.    
+
 De URL voor bevragingen op deze kaartlaag wordt dan:    
 https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3      
 Merk op de dat de URL van de Zonnewijzer service is uitgebreid met het ID van de laag die we willen bevragen!    
@@ -12,12 +13,15 @@ Voor een geldig request, moeten we aan de URL ook nog query-parameters toevoegen
 
 ## Request 1: De complete dataset in GeoJSON-formaat
 
+Met de `where`-parameter kun je rijen filteren op attribuutwaarden. De parameter is verplicht. Als je alle gegevens wilt, geef je de waarde `1=1` op. 
+
+De `f` parameter gebruik je voor het specificeren van het formaat waarin de service de gegevens retourneert.    
+
 Query-parameters:
 ```
     where 	1=1	
     f		geojson	
 ```
-Met de `where`-parameter kun je rijen filteren op attribuutwaarden. De parameter is verplicht. Als je alle gegevens wilt, geef je de waarde `1=1` op. 
 	
 Request:	
 https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1=1&f=geojson
