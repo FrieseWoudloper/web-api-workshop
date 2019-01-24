@@ -81,9 +81,9 @@ Request:
 ## Totale energieproductie door kleinverbruikers
 ```
     where           1=1
-    outStatistics	[{"statisticType":"sum", 
-	                  "onStatisticField":"opbrengst_kv_mwh", 
-					  "outStatisticFieldName":"tot_opbrengst_kv_mw"}]
+    outStatistics	[{"statisticType":"sum",      
+                      "onStatisticField":"opbrengst_kv_mwh",      
+                      "outStatisticFieldName":"tot_opbrengst_kv_mw"}]
     f               pjson
 ```	
 Request:    
