@@ -35,7 +35,7 @@ Met de parameter `returnGeometry` bepaal je of de dataset die de service retourn
 
 Query-parameters:
 ```
-    where	    1=1    
+    where           1=1    
     outFields	    gm_naam,opbrengst_kv_mwh	
     returnGeometry  false	
     f               json
@@ -46,7 +46,7 @@ https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/Feat
 ## Gemeentes met een negatieve(!) energieproductie door kleinverbruikers
 Query-parameters:
 ```
-    where	    opbrengst_kv_mwh<0    
+    where           opbrengst_kv_mwh<0    
     outFields	    gm_naam,opbrengst_kv_mwh	
     returnGeometry  false
     f               json
