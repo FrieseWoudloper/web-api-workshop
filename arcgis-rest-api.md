@@ -13,9 +13,9 @@ Voor een geldig request, moeten we aan de URL ook nog query-parameters toevoegen
 
 ## Request 1: De complete dataset in GeoJSON-formaat
 
-Met de `where`-parameter kun je rijen filteren op attribuutwaarden. De parameter is verplicht. Als je alle gegevens wilt, geef je de waarde `1=1` op. 
+Met de `where` parameter kun je rijen filteren op attribuutwaarden. De parameter is verplicht. Als je alle gegevens wilt, geef je de waarde `1=1` op. 
 
-De `f` parameter gebruik je voor het specificeren van het formaat waarin de service de gegevens retourneert.    
+De `f` parameter gebruik je voor het specificeren van het formaat waarin de service de gegevens retourneert. Geldige waarden zijn bijvoorbeeld `html`, `json` en `geojson`.   
 
 Query-parameters:
 ```
