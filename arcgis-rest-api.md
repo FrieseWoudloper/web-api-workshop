@@ -1,9 +1,11 @@
-In deze oefening zijn we geïnteresseerd in de energieproductie door kleinverbruikers per gemeente. Dit is de vierde laag in de Zonnewijzer service. De laag heeft identificatienummer 3.    
+In deze oefening zijn we geïnteresseerd in de energieproductie door kleinverbruikers per gemeente. 
 
-De URL voor onze requests is:    
+Dit is de vierde laag in de Zonnewijzer service. De laag heeft identificatienummer (ID) 3. Dit kun je checken in de [beschrijving van de service](https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer).    
+
+De URL voor bevragingen op deze kaartlaag is:    
 https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3    
 
-Merk op de dat de URL van de Zonnewijzer-service is uitgebreid met het identificatienummer van de laag die we willen bevragen.    
+Merk op de dat de URL van de Zonnewijzer service is uitgebreid met het ID van de laag die we willen bevragen!    
 
 Voor een geldig request, moeten we aan de URL ook nog query-parameters toevoegen.    
 
