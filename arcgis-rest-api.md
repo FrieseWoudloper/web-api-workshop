@@ -5,13 +5,14 @@ Als je bovenstaande link volgt, krijg je een beschrijving. Dan kun je zien dat d
 
 We zijn geïnteresseerd in de energieproductie door kleinverbruikers per gemeente. Dit is de vierde laag in de Zonnewijzer service. De laag heeft identificatienummer (ID) 3.     
 
-Meer informatie over de kaartlaag - bijvoorbeeld over de attributen - krijg je via deze link: https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3.    
+Meer informatie over de kaartlaag - bijvoorbeeld over de attributen - krijg je via deze link:     
+https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3.    
  
-We willen een bevraging (`query`) doen en geen wijzigingen doorvoeren in de configuratie of inhoud van de kaartlaag.
+We willen een bevraging doen en geen wijzigingen doorvoeren in de configuratie of inhoud van de kaartlaag. We kiezen daarom voor de actie `query`. Een actie wordt in het jargon een _operation_ genoemd.    
 
-De URL voor onze requests wordt dan:    
+De URL voor onze requests wordt uiteindelijk:    
 https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query      
-Merk op de dat de URL van de Zonnewijzer service is uitgebreid met het ID van de laag en de operatie (`query`) die we willen uitvoeren!    
+Merk op de dat de URL van de Zonnewijzer service is uitgebreid met het ID van de laag en de actie die we op deze laag willen uitvoeren!    
 
 Voor een geldig request, moeten we aan de URL ook nog request parameters toevoegen. Hierna volgt een aantal voorbeelden van requests. Je kunt de requests ook in Postman uitvoeren.     
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/72b27942624d611382e9#?env%5Bworkshop-web-api%5D=W3sia2V5Ijoiem9ubmV3aWp6ZXJfc2VydmljZSIsInZhbHVlIjoiaHR0cHM6Ly9nZW9zZXJ2aWNlcy56dWlkLWhvbGxhbmQubmwvYXJjZ2lzL3Jlc3Qvc2VydmljZXMvUnVpbXRlL1pvbm5ld2lqemVyL0ZlYXR1cmVTZXJ2ZXIiLCJkZXNjcmlwdGlvbiI6IiIsInR5cGUiOiJ0ZXh0IiwiZW5hYmxlZCI6dHJ1ZX1d)  
