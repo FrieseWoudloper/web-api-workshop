@@ -25,10 +25,10 @@ Met de `where` parameter kun je rijen filteren op attribuutwaarden. De parameter
 De `f` parameter gebruik je voor het specificeren van het formaat waarin de service de gegevens retourneert. Geldige waarden zijn bijvoorbeeld `html`, `json` en `geojson`.   
 
 Request parameters:
-| *key*            | *value*                     |
+| *key*          | *value*                   |
 |----------------|---------------------------|
-| `where`          | `1=1`                       |
-| `f`              | `geojson`                     |
+| `where`        | `1=1`                     |
+| `f`            | `geojson`                 |
 ```
     where 	1=1	
     f		geojson	
