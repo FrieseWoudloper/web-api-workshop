@@ -5,7 +5,7 @@ Als je bovenstaande link volgt, krijg je een beschrijving. Dan kun je zien dat d
 
 We zijn geïnteresseerd in de energieproductie door kleinverbruikers per gemeente. Dit is de vierde laag in de Zonnewijzer service. De laag heeft identificatienummer (ID) 3.     
 
-Meer informatie over de kaartlaag - bijvoorbeeld over de attributen - krijg je via deze link:     
+Meer informatie over deze kaartlaag - bijvoorbeeld over de attributen - krijg je via deze link:     
 https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3.    
  
 We willen een bevraging doen en geen wijzigingen doorvoeren in de configuratie of inhoud van de kaartlaag. We kiezen daarom voor de actie `query`. Een actie wordt in het jargon een _operation_ genoemd.    
