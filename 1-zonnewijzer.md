@@ -6,4 +6,7 @@ De ArcGIS REST API is niet alleen geschikt voor het tonen van gegevens in een ka
 
 Voor een overzicht van alle gegevens die Zuid-Holland aanbiedt via de ArcGIS REST API, raadpleeg je de [services directory](https://geoservices.zuid-holland.nl/arcgis/rest/services). 
 
-Als je meer wilt weten over de services directory, dan is dit een goede plek om te beginnen: [Get started with the services directory](https://developers.arcgis.com/rest/services-reference/get-started-with-the-services-directory.htm)
+Als je meer wilt weten over de services directory, lees dan [Using the Services Directory](https://developers.arcgis.com/rest/services-reference/using-the-services-directory.htm) of [Get started with the services directory](https://developers.arcgis.com/rest/services-reference/get-started-with-the-services-directory.htm)
+
+
+Je kunt ook meteen aan de slag gaan met de oefeningen, en de online documentatie als naslagwerk gebruiken.
