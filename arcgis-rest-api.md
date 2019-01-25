@@ -26,15 +26,29 @@ De `f` parameter gebruik je voor het specificeren van het formaat waarin de serv
 
 Request parameters:    
 
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-
-| *key*          | *value*                   |
+| key            | value                     |
 |----------------|---------------------------|
 | `where`        | `1=1`                     |
 | `f`            | `geojson`                 |
+
+<table>
+  <tr>
+    <td>
+           `where`
+    </td>
+	<td>
+           `1=1`
+    </td>
+  </tr>
+    <tr>
+    <td>
+           `f`
+    </td>
+	<td>
+           `geojson`
+    </td>
+  </tr>
+</table>
 
 ```
     where 	1=1	
