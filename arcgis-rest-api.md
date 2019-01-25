@@ -26,6 +26,7 @@ De `f` parameter gebruik je voor het specificeren van het formaat waarin de serv
 
 Request parameters:
 ```
+    *key*     *value*
     where 	1=1	
     f		geojson	
 ```
@@ -35,7 +36,7 @@ https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/Feat
 
 ## Energieproductie door kleinverbruikers per gemeente in JSON (zónder geometrie)    
 
-Standaard worden alle attributen in de dataset geretourneerd. Als je maar een beperkt aantal attributen wilt ontvangen, dan kun je dat aangeven in de `outFields` parameter. Welke attributen er beschikbaar zijn, kun je lezen in de [beschrijving van de laag](https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3) of in de response op het vorige request.    
+Standaard worden alle attributen in de dataset geretourneerd. Als je maar een beperkt aantal attributen wilt ontvangen, dan kun je dat aangeven in de `outFields` parameter. Welke attributen er zijn, kun je opzoeken in de [beschrijving van de laag](https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3).    
 
 Met de parameter `returnGeometry` bepaal je of de dataset die de service retourneert wel (`true`) of geen (`false`) geometrie bevat.         
 
