@@ -3,7 +3,7 @@ https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/Feat
 
 Als je bovenstaande link volgt, krijg je een beschrijving. Dan kun je zien dat de Zonnewijzer service toegang biedt tot meer dan twintig kaartlagen. 
 
-We zijn geïnteresseerd in de energieproductie door kleinverbruikers per gemeente. Dit is de vierde laag in de Zonnewijzer service. De laag heeft identificatienummer (ID) 3.     
+We zijn op zoek naar gegevens over de energieproductie door kleinverbruikers per gemeente. Dit is de vierde laag in de Zonnewijzer service. De laag heeft identificatienummer (ID) 3.     
 
 Meer informatie over deze kaartlaag - bijvoorbeeld over de attributen - krijg je via deze link:     
 https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3.    
@@ -22,13 +22,16 @@ Voor een geldig request, moeten we aan de URL ook nog request parameters toevoeg
 
 Met de `where` parameter kun je rijen filteren op attribuutwaarden. De parameter is verplicht. Als je alle gegevens wilt, geef je de waarde `1=1` op. 
 
+Attributen selecteer je met de `outFields` parameter. Met een wildcard (`*`) selecteer je alle attributen.
+
 De `f` parameter gebruik je voor het specificeren van het formaat waarin de service de gegevens retourneert. Geldige waarden zijn bijvoorbeeld `html`, `json` en `geojson`.   
 
 Request parameters:    
 
 ```
-    where 	1=1	
-    f		geojson	
+    where 	           1=1	
+	outFields          *
+    f		           geojson	
 ```
 	
 Request:    
@@ -44,10 +47,10 @@ Met `f=pjson` geeft de service het resultaat terug in 'pretty' JSON. Dat maakt h
 
 Request parameters:
 ```
-    where           1=1    
-    outFields	    gm_naam,opbrengst_kv_mwh	
-    returnGeometry  false	
-    f               pjson
+    where              1=1    
+    outFields	       gm_naam,opbrengst_kv_mwh	
+    returnGeometry     false	
+    f                  pjson
 ```
 Request:    
 https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1=1&outFields=gm_naam,opbrengst_kv_mwh&returnGeometry=false&f=pjson
@@ -56,10 +59,10 @@ https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/Feat
 
 Request parameters:
 ```
-    where           opbrengst_kv_mwh<0    
-    outFields	    gm_naam,opbrengst_kv_mwh	
-    returnGeometry  false
-    f               pjson
+    where              opbrengst_kv_mwh<0    
+    outFields	       gm_naam,opbrengst_kv_mwh	
+    returnGeometry     false
+    f                  pjson
 ```
 Request:    
 [https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=opbrengst_kv_mwh<0&outFields=gm_naam,opbrengst_kv_mwh&returnGeometry=false&f=json](https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=opbrengst_kv_mwh<0&outFields=gm_naam,opbrengst_kv_mwh&returnGeometry=false&f=pjson)
@@ -95,11 +98,11 @@ Met de parameter `outStatistics` kun je statistieken opvragen. Per statistiek ge
 
 Request parameters:    
 ```
-    where           1=1
-    outStatistics   [{"statisticType":"sum",       
-                      "onStatisticField":"opbrengst_kv_mwh",      
-                      "outStatisticFieldName":"tot_opbrengst_kv_mwh"}]
-    f               pjson
+    where              1=1
+    outStatistics      [{"statisticType":"sum",       
+                         "onStatisticField":"opbrengst_kv_mwh",      
+                         "outStatisticFieldName":"tot_opbrengst_kv_mwh"}]
+    f                  pjson
 ```	
 Request:    
 https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1=1&outStatistics=[{"statisticType":"sum","onStatisticField":"opbrengst_kv_mwh","outStatisticFieldName":"tot_opbrengst_kv_mwh"}]&f=pjson
@@ -110,9 +113,9 @@ Als je kiest voor het GeoJSON formaat, wordt geometrie automatisch in het WGS84 
 
 Request parameters:    
 ```
-    where           1=1                     
-    outSR           28992
-    f               geojson
+    where              1=1                     
+    outSR              28992
+    f                  geojson
 ```	
 Request:    
 https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1=1&outSR=28992&f=geojson
@@ -129,22 +132,13 @@ Daarnaast moet je in de parameter `spatialRel` aangeven wat voor soort analyse j
 
 Request parameters:    
 ```
-    where           1=1 
-    geometryType    esriGeometryPoint 
-    geometry        4.313273,52.0795985
-    inSR            4326
-    spatialRel      esriSpatialRelWithin
-    f               geojson	
+    where              1=1 
+    geometryType       esriGeometryPoint 
+    geometry           4.313273,52.0795985
+    inSR               4326
+    spatialRel         esriSpatialRelWithin
+    f                  geojson	
 ```
 
 Request:    
 https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1=1&geometryType=esriGeometryPoint&geometry=4.313273,52.0795985&inSR=4326&spatialRel=esriSpatialRelWithin&f=geojson
-
-## Meer informatie
-
-Raadpleeg de ArcGIS REST API documentatie voor [meer informatie over query parameters](https://developers.arcgis.com/rest/services-reference/query-feature-service-layer-.htm#GUID-62EE7495-8688-4BD0-B433-89F7E4476673).
-
-
-
-
-
