@@ -12,7 +12,7 @@ We willen een bevraging doen en geen wijzigingen doorvoeren in de configuratie o
 
 De URL voor onze requests wordt uiteindelijk:    
 https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query      
-Merk op de dat de URL van de Zonnewijzer service is uitgebreid met het ID van de laag en de operatio_ die we op deze laag willen uitvoeren!    
+Merk op de dat de URL van de Zonnewijzer service is uitgebreid met het ID van de laag en de operation die we op deze laag willen uitvoeren!    
 
 Voor een geldig request, moeten we aan de URL ook nog request parameters toevoegen. Hierna volgt een aantal voorbeelden van requests. Je kunt de requests in de browser, maar ook in de handige tool Postman uitvoeren.     
 
