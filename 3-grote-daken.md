@@ -36,7 +36,7 @@ Tot zo ver niets nieuws onder de zon. Of toch wel?
 Scroll naar het einde van het document dat de service retourneert. Daar zie je staan:
 
 ```
-    "exceededTransferLimit": true`
+    "exceededTransferLimit": true
 ```
 
 Merk bovendien op dat voor de laatste rij geldt: `OBJECTID = 1000`.
