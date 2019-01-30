@@ -129,7 +129,7 @@ Dit is in de praktijk niet zo'n zinvolle bevraging, maar illustreert wel mooi da
 
 Voor zo'n analyse moet je eerst een _input geometry_ specificeren. Dat doe je met behulp van de parameters `geometryType`, `geometry` en `inSR`. Ze bevatten respectievelijk het type geometrie, de coördinaten en het coördinatenstelsel.  
 
-Daarnaast moet je in de parameter `spatialRel` aangeven wat voor soort analyse je wilt doen. Welke ruimtelijke relatie met de input `geometry` wil je meenemen in de bevraging? Voorbeelden van ruimtelijke relaties zijn `intersects`, `contains`, `within`, enzovoorts.  
+Daarnaast moet je in de parameter `spatialRel` aangeven wat voor soort analyse je wilt doen. Welke ruimtelijke relatie met de input geometry wil je meenemen in de bevraging? Voorbeelden van ruimtelijke relaties zijn `intersects`, `contains`, `within`, enzovoorts.  
 
 Request parameters:    
 ```
