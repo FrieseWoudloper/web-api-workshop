@@ -118,7 +118,7 @@ Request parameters:
     outStatistics               [{"statisticType":"count",       
                                   "onStatisticField":"OBJECTID",      
                                   "outStatisticFieldName":"aantal_grote_daken"}]
-	groupByFieldsForStatistics	gemeentenaam				 
+    groupByFieldsForStatistics  gemeentenaam				 
     f                           pjson
 ```	
 
