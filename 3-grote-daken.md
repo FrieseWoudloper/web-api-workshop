@@ -24,8 +24,8 @@ Request parameters:
 
 ```
     where              1=1 	
-	outFields          *
-	returnGeometry     false
+    outFields          *
+    returnGeometry     false
     f		           pjson	
 ```
 
