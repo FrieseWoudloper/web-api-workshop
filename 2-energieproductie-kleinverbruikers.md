@@ -29,9 +29,9 @@ De `f` parameter gebruik je voor het specificeren van het formaat waarin de serv
 Request parameters:    
 
 ```
-    where 	           1=1	
+    where                  1=1	
     outFields              *
-    f		           geojson	
+    f                      geojson	
 ```
 	
 Request:    
@@ -143,5 +143,7 @@ Request parameters:
 
 Request:    
 https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1=1&geometryType=esriGeometryPoint&geometry=4.313273,52.0795985&inSR=4326&spatialRel=esriSpatialRelWithin&f=geojson
+
+Verifieer of je de juiste gemeente retour krijgt op http://geojson.io. Kopieer de response naar het invoervenster op de webpagina en bekijk de kaart.
 
 [Volgende](3-grote-daken.md)
