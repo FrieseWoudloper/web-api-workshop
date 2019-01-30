@@ -110,7 +110,7 @@ https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/Feat
 
 ## Geometrie in RD New 
 
-Als je kiest voor het GeoJSON formaat, wordt geometrie automatisch in het WGS84 (EPSG:4326) coordinatenstelsel geretourneerd. Je kunt een ander coördinatenstelsel opgeven met de `outSR` parameter, bijvoorbeeld RD New (EPSG:28992).    
+Als je kiest voor het GeoJSON formaat, wordt geometrie automatisch in het WGS84 (EPSG:4326) coördinatenstelsel geretourneerd. Je kunt een ander coördinatenstelsel opgeven met de `outSR` parameter, bijvoorbeeld RD New (EPSG:28992).    
 
 Request parameters:    
 ```
