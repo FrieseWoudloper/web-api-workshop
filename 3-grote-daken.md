@@ -125,3 +125,13 @@ Request parameters:
 Request:    
 https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1=1&outStatistics=[{"statisticType":"count","onStatisticField":"OBJECTID","outStatisticFieldName":"aantal_grote_daken"}]&f=pjson
 
+## Alle grote daken in de gemeente Alblasserdam 
+
+Request parameters:    
+```
+    where                       1=1
+    geometry                    {"rings": [[[103213.30700000003,431507.91699999943],[103126.35799999908,431607.27199999988],    
+                                            ..., [103213.30700000003,431507.91699999943]]]}
+    geometryType                esriGeometryPolygon
+    inSR                        28992
+    f                           geojson
