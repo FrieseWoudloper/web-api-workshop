@@ -143,3 +143,5 @@ Request parameters:
 
 Request:    
 https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1=1&geometryType=esriGeometryPoint&geometry=4.313273,52.0795985&inSR=4326&spatialRel=esriSpatialRelWithin&f=geojson
+
+[Volgende](3-grote-daken.md)
