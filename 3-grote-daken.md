@@ -52,8 +52,8 @@ Request parameters:
 
 ```
     where              1=1 	
-	returnCountOnly    true
-    f		           pjson	
+    returnCountOnly    true
+    f                  pjson	
 ```
 
 Request:    
