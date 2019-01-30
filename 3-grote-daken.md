@@ -64,7 +64,7 @@ Dat doe je door _paginering_ toe te passen: je maakt meerdere requests, waarmee 
 
 ## Paginering
 
-Bij paginering maak je slim gebruik van de parameters orderByFields`, `resultOffset` en `recordCount`.    
+Bij paginering maak je slim gebruik van de parameters `orderByFields`, `resultOffset` en `recordCount`.    
 Met `orderByFields` sorteer je de rijen op `OBJECTID`. Dit is de standaardinstelling. Je kunt de parameter dus ook weglaten.    
 Daarna geef je met `resultOffset` aan wat het volgnummer is van de eerste rij die opgehaald moet worden.    
 Met `recordCount` specificeer je hoeveel rijen het request maximaal mag retourneren. Bij paginering is dit meestal gelijk aan het maximum aantal rijen dat de service retourneert.    
