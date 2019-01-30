@@ -97,7 +97,7 @@ Request parameters:
     outStatistics      [{"statisticType":"max",       
                          "onStatisticField":"oppervlakte",      
                          "outStatisticFieldName":"grootste_opp"},
-						{"statisticType":"min",       
+                        {"statisticType":"min",       
                          "onStatisticField":"oppervlakte",      
                          "outStatisticFieldName":"kleinste_opp"}]
     f                  pjson
