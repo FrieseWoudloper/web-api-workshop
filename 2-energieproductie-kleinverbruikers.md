@@ -39,9 +39,9 @@ https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/Feat
 
 ## Energieproductie door kleinverbruikers per gemeente in JSON (zónder geometrie)    
 
-Standaard worden alle attributen in de dataset geretourneerd. Als je maar een beperkt aantal attributen wilt ontvangen, dan kun je dat aangeven in de `outFields` parameter. Welke attributen er zijn, kun je opzoeken in de [beschrijving van de laag](https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3).    
+Zoals gezegd kun je in de `outFields` parameter aangeven welke attributen je wilt hebben. De attributen die beschikbaar zijn, kun je opzoeken in de [beschrijving van de laag](https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3) of in de reponse op het vorige request. 
 
-Met de parameter `returnGeometry` bepaal je of de dataset die de service retourneert wel (`true`) of geen (`false`) geometrie bevat.         
+De waarde van de parameter `returnGeometry` bepaalt of de geretourneerde dataset wel (`true`) of geen (`false`) geometrie bevat.  
 
 Met `f=pjson` geeft de service het resultaat terug in 'pretty' JSON. Dat maakt het bestand beter leesbaar.    
 
