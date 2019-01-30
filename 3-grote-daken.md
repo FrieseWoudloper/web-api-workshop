@@ -12,7 +12,7 @@ Zoek in de service beschrijving naar de laag _Grote daken [meer dan 180 panelen]
 
 Je hebt nu alle informatie die nodig is om de request URL samen te stellen. Nu de juiste request parameters nog!    
 
-Experimenteren met requests gaat vaak makkelijker in Postman. Door te klikken op deze knop, open je een collectie met alle requests uit deze workshop in Postman. Wel zo makkelijk! 
+Experimenteren met requests gaat vaak makkelijker in Postman. Door te klikken op onderstaande knop, open je een collectie met alle requests uit deze workshop in Postman. Wel zo makkelijk! 
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/72b27942624d611382e9#?env%5Bworkshop-web-api%5D=W3sia2V5Ijoiem9ubmV3aWp6ZXJfc2VydmljZSIsInZhbHVlIjoiaHR0cHM6Ly9nZW9zZXJ2aWNlcy56dWlkLWhvbGxhbmQubmwvYXJjZ2lzL3Jlc3Qvc2VydmljZXMvUnVpbXRlL1pvbm5ld2lqemVyL0ZlYXR1cmVTZXJ2ZXIiLCJkZXNjcmlwdGlvbiI6IiIsInR5cGUiOiJ0ZXh0IiwiZW5hYmxlZCI6dHJ1ZX1d)  
   
