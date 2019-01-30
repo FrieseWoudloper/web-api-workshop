@@ -91,9 +91,10 @@ Request:
 
 ## Totale energieproductie door kleinverbruikers in Zuid-Holland
 
-Met de parameter `outStatistics` kun je statistieken opvragen. Per statistiek geef je aan 
+Met de parameter `outStatistics` kun je statistieken opvragen. Per statistiek geef je aan:
+':
 * welk type statistiek je wilt (bijvoorbeeld `max`, `count` of `sum`), 
-* voor welk attribuut je de statistiek wil laten berekenen en 
+* voor welk attribuut je de statistiek wilt laten berekenen en 
 * wat de naam is van het attribuut waarin je het resultaat van de berekening wilt opslaan.
 
 Request parameters:    
