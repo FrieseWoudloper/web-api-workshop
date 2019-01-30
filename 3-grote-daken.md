@@ -87,7 +87,7 @@ Request parameters:
 Request:    
 https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/0/query?where=1=1&outFields=*&returnGeometry=false&orderByFields=OBJECTID&resultOffset=1000&recordCount=1000&f=pjson
 
-Merk op dat voor de eerste rij in het antwoord geldt: `OBJECTID = 1001`.
+Merk op dat voor de eerste rij in de response van de server geldt: `OBJECTID = 1001`.
 
 ## Grootste en kleinste oppervlakte van een dak 
 
