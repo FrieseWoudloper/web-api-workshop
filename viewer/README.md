@@ -1,6 +1,6 @@
 # PDOK locatie server viewer
 
-Deze demo laat zien hoe de PDOK suggest en locate server kan worden gebruikt.
+Deze demo laat zien hoe de PDOK suggest en locate service gebruikt kunnen worden.
 
 ## Hoe te gebruiken
 
