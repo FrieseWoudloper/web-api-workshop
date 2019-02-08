@@ -1,0 +1,20 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "PDOK API example",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Niene Boeijen",
+  "license": "ISC",
+  "dependencies": {
+    "bloodhound-js": "^1.2.3",
+    "leaflet": "^1.4.0",
+    "leaflet-hash": "^0.2.1",
+    "proj4": "^2.5.0",
+    "proj4leaflet": "^1.0.2",
+    "terraformer-wkt-parser": "^1.2.0",
+    "typeahead.js": "^0.11.1"
+  }
+}

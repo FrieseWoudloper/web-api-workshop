@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PDOK API Voorbeeld</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+</head>
+<body>
+    <!-- SEARCH BAR -->
+    <div id="search_bar">
+        <div id="ttinput">
+            <input class="typeahead" type="text" placeholder="Mijn woonplaats" />
+        </div>
+    </div>
+    <!-- KAART  -->
+    <div id="inhoud">
+        <div id="map" class="block"></div>
+        <div id="text" class="block">
+            <h1><a href="https://github.com/PDOK/locatieserver/wiki/API-Locatieserver">PDOK Locatieserver API</a></h1>
+            <h1> Request</h1>
+            <div id="flextext"></div>
+                       
+        </div>
+    </div>
+    <script src="src/bundle.js"></script>
+</body>
+</html>
