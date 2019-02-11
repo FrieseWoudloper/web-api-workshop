@@ -1,0 +1,1651 @@
+{
+	"info": {
+		"_postman_id": "f1a4892d-6f5a-4f60-af2d-45d3d6e97769",
+		"name": "Workshop Web API",
+		"description": "Collectie voor de Web API workshop. Zie http://www.github.com/friesewoudloper/web-api-workshop.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Energieproductie kleinverbruikers",
+			"item": [
+				{
+					"name": "Alle gegevens in de layer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1=1&outFields=*&f=geojson",
+							"protocol": "https",
+							"host": [
+								"geoservices",
+								"zuid-holland",
+								"nl"
+							],
+							"path": [
+								"arcgis",
+								"rest",
+								"services",
+								"Ruimte",
+								"Zonnewijzer",
+								"FeatureServer",
+								"3",
+								"query"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "1=1",
+									"description": "Parameter is verplicht. 1=1 is altijd waar. Zo selecteer je alle features."
+								},
+								{
+									"key": "outFields",
+									"value": "*",
+									"description": "Met * selecteer je alle attributen."
+								},
+								{
+									"key": "f",
+									"value": "geojson"
+								}
+							]
+						},
+						"description": "Alle features en attributen in de laag 'Gemeente - Gerealiseerde productie kleinverbruikers [MWh/jaar]' van de Zonnewijzer service. De geometrie is in het WGS84 (EPSG:4326) coördinatenstelsel in GeoJSON formaat."
+					},
+					"response": []
+				},
+				{
+					"name": "Energieproductie door kleinverbruikers per gemeente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1=1&outFields=gm_naam, opbrengst_kv_mwh&returnGeometry=false&f=pjson",
+							"protocol": "https",
+							"host": [
+								"geoservices",
+								"zuid-holland",
+								"nl"
+							],
+							"path": [
+								"arcgis",
+								"rest",
+								"services",
+								"Ruimte",
+								"Zonnewijzer",
+								"FeatureServer",
+								"3",
+								"query"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "1=1"
+								},
+								{
+									"key": "outFields",
+									"value": "gm_naam, opbrengst_kv_mwh",
+									"description": "Raadpleeg de beschrijving van de laag in de services directory voor een overzicht van attribuutnamen.\n"
+								},
+								{
+									"key": "returnGeometry",
+									"value": "false"
+								},
+								{
+									"key": "f",
+									"value": "pjson",
+									"description": "'Pretty' JSON, dat wil zeggen: mooi uitgelijnd."
+								}
+							]
+						},
+						"description": "Energieproductie door kleinverbruikers (MWh/jaar) per gemeente in JSON formaat. De geretourneerde dataset bevat géén geometrie."
+					},
+					"response": []
+				},
+				{
+					"name": "Gemeenten met een negatieve energieproductie door kleinverbruikers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=opbrengst_kv_mwh < 0&outFields=gm_naam, opbrengst_kv_mwh&returnGeometry=false&f=pjson",
+							"protocol": "https",
+							"host": [
+								"geoservices",
+								"zuid-holland",
+								"nl"
+							],
+							"path": [
+								"arcgis",
+								"rest",
+								"services",
+								"Ruimte",
+								"Zonnewijzer",
+								"FeatureServer",
+								"3",
+								"query"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "opbrengst_kv_mwh < 0"
+								},
+								{
+									"key": "outFields",
+									"value": "gm_naam, opbrengst_kv_mwh"
+								},
+								{
+									"key": "returnGeometry",
+									"value": "false"
+								},
+								{
+									"key": "f",
+									"value": "pjson"
+								}
+							]
+						},
+						"description": "De namen van gemeenten met een negatieve energieproductie door kleinverbruikers in JSON formaat."
+					},
+					"response": []
+				},
+				{
+					"name": "Top 3 hoogste energieproductie door kleinverbruikers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1=1&outFields=gm_naam, opbrengst_kv_mwh&returnGeometry=false&orderByFields=opbrengst_kv_mwh DESC&resultRecordCount=3&f=pjson",
+							"protocol": "https",
+							"host": [
+								"geoservices",
+								"zuid-holland",
+								"nl"
+							],
+							"path": [
+								"arcgis",
+								"rest",
+								"services",
+								"Ruimte",
+								"Zonnewijzer",
+								"FeatureServer",
+								"3",
+								"query"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "1=1"
+								},
+								{
+									"key": "outFields",
+									"value": "gm_naam, opbrengst_kv_mwh"
+								},
+								{
+									"key": "returnGeometry",
+									"value": "false"
+								},
+								{
+									"key": "orderByFields",
+									"value": "opbrengst_kv_mwh DESC",
+									"description": "DESC voor aflopend, ASC voor oplopend."
+								},
+								{
+									"key": "resultRecordCount",
+									"value": "3",
+									"description": "Het aantal features dat geretourneerd wordt."
+								},
+								{
+									"key": "f",
+									"value": "pjson"
+								}
+							]
+						},
+						"description": "De drie gemeenten met de hoogste energieproductie door kleinverbruikers (MWh/jaar)."
+					},
+					"response": []
+				},
+				{
+					"name": "Totale energieproductie door kleinverbruikers in Zuid-Holland",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1=1&outStatistics=[{\"statisticType\":\"sum\", \"onStatisticField\":\"opbrengst_kv_mwh\", \"outStatisticFieldName\":\"tot_opbrengst_kv_mwh\"}]&f=pjson",
+							"protocol": "https",
+							"host": [
+								"geoservices",
+								"zuid-holland",
+								"nl"
+							],
+							"path": [
+								"arcgis",
+								"rest",
+								"services",
+								"Ruimte",
+								"Zonnewijzer",
+								"FeatureServer",
+								"3",
+								"query"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "1=1"
+								},
+								{
+									"key": "outStatistics",
+									"value": "[{\"statisticType\":\"sum\", \"onStatisticField\":\"opbrengst_kv_mwh\", \"outStatisticFieldName\":\"tot_opbrengst_kv_mwh\"}]",
+									"description": "JSON array met voor iedere statistiek die je wilt berekenen een list object. Een list object bevat drie key-value paren: statisticType, onStatisticField en outStatisticFieldName."
+								},
+								{
+									"key": "f",
+									"value": "pjson"
+								}
+							]
+						},
+						"description": "De som van de energieproductie door kleinverbruikers (MWh/jaar) voor alle gemeenten in de dataset."
+					},
+					"response": []
+				},
+				{
+					"name": "Geometrie in RD New",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1=1&outSR=28992&f=geojson",
+							"protocol": "https",
+							"host": [
+								"geoservices",
+								"zuid-holland",
+								"nl"
+							],
+							"path": [
+								"arcgis",
+								"rest",
+								"services",
+								"Ruimte",
+								"Zonnewijzer",
+								"FeatureServer",
+								"3",
+								"query"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "1=1"
+								},
+								{
+									"key": "outSR",
+									"value": "28992",
+									"description": "EPSG code van het coördinatenstelsel waarin geometrie geretourneerd moet worden.\n"
+								},
+								{
+									"key": "f",
+									"value": "geojson"
+								}
+							]
+						},
+						"description": "Alle features en attributen in de laag 'Gemeente - Gerealiseerde productie kleinverbruikers [MWh/jaar]' van de Zonnewijzer service. De geometrie is in het RD New (EPSG:28992) coördinatenstelsel. Dit is het standaard coördinatenstelsel ('Rijksdriehoekstelsel') voor Nederland."
+					},
+					"response": []
+				},
+				{
+					"name": "Gemeente waarin het punt met lat=52.080 en lon=4.313 valt",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/3/query?where=1=1&geometryType=esriGeometryPoint&geometry=4.313, 52.0780&inSR=4326&spatialRel=esriSpatialRelWithin&f=geojson",
+							"protocol": "https",
+							"host": [
+								"geoservices",
+								"zuid-holland",
+								"nl"
+							],
+							"path": [
+								"arcgis",
+								"rest",
+								"services",
+								"Ruimte",
+								"Zonnewijzer",
+								"FeatureServer",
+								"3",
+								"query"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "1=1"
+								},
+								{
+									"key": "geometryType",
+									"value": "esriGeometryPoint",
+									"description": "Type input geometrie."
+								},
+								{
+									"key": "geometry",
+									"value": "4.313, 52.0780",
+									"description": "Input geometrie."
+								},
+								{
+									"key": "inSR",
+									"value": "4326",
+									"description": "Coördinatenstelsel (EPSG code) van de input geometrie.\n"
+								},
+								{
+									"key": "spatialRel",
+									"value": "esriSpatialRelWithin",
+									"description": "Ruimtelijke relatie met de input geometrie die je mee wilt nemen in de query.\n"
+								},
+								{
+									"key": "f",
+									"value": "geojson"
+								}
+							]
+						},
+						"description": "Gemeente waarin het punt met breedtegraad 52.080 en lengtegraad 4.313 valt. Dit zijn de GPS-coördinaten van het Binnenhof."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Grote daken",
+			"item": [
+				{
+					"name": "Attribuutgegevens in JSON",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/0/query?where=1=1&outFields=*&returnGeometry=false&f=pjson",
+							"protocol": "https",
+							"host": [
+								"geoservices",
+								"zuid-holland",
+								"nl"
+							],
+							"path": [
+								"arcgis",
+								"rest",
+								"services",
+								"Ruimte",
+								"Zonnewijzer",
+								"FeatureServer",
+								"0",
+								"query"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "1=1"
+								},
+								{
+									"key": "outFields",
+									"value": "*"
+								},
+								{
+									"key": "returnGeometry",
+									"value": "false"
+								},
+								{
+									"key": "f",
+									"value": "pjson"
+								}
+							]
+						},
+						"description": "De attribuutgegevens van de eerste 1.000 features in de layer. Weliswaar vragen we om álle features, maar de service geeft niet meer dan 1.000 features per request terug."
+					},
+					"response": []
+				},
+				{
+					"name": "Totaal aantal grote daken",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/0/query?where=1=1&returnCountOnly=true&f=pjson",
+							"protocol": "https",
+							"host": [
+								"geoservices",
+								"zuid-holland",
+								"nl"
+							],
+							"path": [
+								"arcgis",
+								"rest",
+								"services",
+								"Ruimte",
+								"Zonnewijzer",
+								"FeatureServer",
+								"0",
+								"query"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "1=1"
+								},
+								{
+									"key": "returnCountOnly",
+									"value": "true"
+								},
+								{
+									"key": "f",
+									"value": "pjson"
+								}
+							]
+						},
+						"description": "Het aantal features in de kaartlaag. Met andere woorden: het aantal rijen in de dataset."
+					},
+					"response": []
+				},
+				{
+					"name": "Paginering",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/0/query?where=1=1&outFields=*&returnGeometry=false&orderByFields=OBJECTID&resultOffset=1000& RecordCount=1000&f=pjson",
+							"protocol": "https",
+							"host": [
+								"geoservices",
+								"zuid-holland",
+								"nl"
+							],
+							"path": [
+								"arcgis",
+								"rest",
+								"services",
+								"Ruimte",
+								"Zonnewijzer",
+								"FeatureServer",
+								"0",
+								"query"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "1=1"
+								},
+								{
+									"key": "outFields",
+									"value": "*"
+								},
+								{
+									"key": "returnGeometry",
+									"value": "false"
+								},
+								{
+									"key": "orderByFields",
+									"value": "OBJECTID"
+								},
+								{
+									"key": "resultOffset",
+									"value": "1000"
+								},
+								{
+									"key": " RecordCount",
+									"value": "1000"
+								},
+								{
+									"key": "f",
+									"value": "pjson"
+								}
+							]
+						},
+						"description": "De Zonnewijzer service geeft per request maximaal 1.000 features terug. Door meerdere requests te maken en de parameters resultOffset en recordCount toe te voegen, kunnen we toch álle features opvragen. Dit wordt ook wel request pagination genoemd. In dit voorbeeld worden de rijen 1.001 tot en met 2.000 opgevraagd."
+					},
+					"response": []
+				},
+				{
+					"name": "Laatste 908 features in de layer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/0/query?where=1=1&outFields=*&returnGeometry=false&orderByFields=OBJECTID&resultOffset=19000& RecordCount=1000&f=pjson",
+							"protocol": "https",
+							"host": [
+								"geoservices",
+								"zuid-holland",
+								"nl"
+							],
+							"path": [
+								"arcgis",
+								"rest",
+								"services",
+								"Ruimte",
+								"Zonnewijzer",
+								"FeatureServer",
+								"0",
+								"query"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "1=1"
+								},
+								{
+									"key": "outFields",
+									"value": "*"
+								},
+								{
+									"key": "returnGeometry",
+									"value": "false"
+								},
+								{
+									"key": "orderByFields",
+									"value": "OBJECTID"
+								},
+								{
+									"key": "resultOffset",
+									"value": "19000"
+								},
+								{
+									"key": " RecordCount",
+									"value": "1000"
+								},
+								{
+									"key": "f",
+									"value": "pjson"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Grootste en kleinste dak",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/0/query?where=1=1&outStatistics=[{\"statisticType\":\"max\", \"onStatisticField\":\"oppervlakte\", \"outStatisticFieldName\":\"grootste_opp\"},{\"statisticType\":\"min\", \"onStatisticField\":\"oppervlakte\", \"outStatisticFieldName\":\"kleinste_opp\"}]&f=pjson",
+							"protocol": "https",
+							"host": [
+								"geoservices",
+								"zuid-holland",
+								"nl"
+							],
+							"path": [
+								"arcgis",
+								"rest",
+								"services",
+								"Ruimte",
+								"Zonnewijzer",
+								"FeatureServer",
+								"0",
+								"query"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "1=1"
+								},
+								{
+									"key": "outStatistics",
+									"value": "[{\"statisticType\":\"max\", \"onStatisticField\":\"oppervlakte\", \"outStatisticFieldName\":\"grootste_opp\"},{\"statisticType\":\"min\", \"onStatisticField\":\"oppervlakte\", \"outStatisticFieldName\":\"kleinste_opp\"}]"
+								},
+								{
+									"key": "f",
+									"value": "pjson"
+								}
+							]
+						},
+						"description": "De maximum en minimum oppervlakte van een dak in de layer."
+					},
+					"response": []
+				},
+				{
+					"name": "Aantal grote daken per gemeente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/0/query?where=1=1&outStatistics=[{\"statisticType\":\"count\", \"onStatisticField\":\"OBJECTID\", \"outStatisticFieldName\":\"aantal_grote_daken\"}]&groupByFieldsForStatistics=gemeentenaam&f=pjson",
+							"protocol": "https",
+							"host": [
+								"geoservices",
+								"zuid-holland",
+								"nl"
+							],
+							"path": [
+								"arcgis",
+								"rest",
+								"services",
+								"Ruimte",
+								"Zonnewijzer",
+								"FeatureServer",
+								"0",
+								"query"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "1=1"
+								},
+								{
+									"key": "outStatistics",
+									"value": "[{\"statisticType\":\"count\", \"onStatisticField\":\"OBJECTID\", \"outStatisticFieldName\":\"aantal_grote_daken\"}]"
+								},
+								{
+									"key": "groupByFieldsForStatistics",
+									"value": "gemeentenaam"
+								},
+								{
+									"key": "f",
+									"value": "pjson"
+								},
+								{
+									"disabled": true
+								}
+							]
+						},
+						"description": "Het aantal grote daken per gemeente."
+					},
+					"response": []
+				},
+				{
+					"name": "Aantal panelen per functie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/0/query?where=1=1&outStatistics=[{\"statisticType\":\"sum\", \"onStatisticField\":\"panelen\", \"outStatisticFieldName\":\"tot_panelen\"}]&groupByFieldsForStatistics=functie&f=pjson",
+							"protocol": "https",
+							"host": [
+								"geoservices",
+								"zuid-holland",
+								"nl"
+							],
+							"path": [
+								"arcgis",
+								"rest",
+								"services",
+								"Ruimte",
+								"Zonnewijzer",
+								"FeatureServer",
+								"0",
+								"query"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "1=1"
+								},
+								{
+									"key": "outStatistics",
+									"value": "[{\"statisticType\":\"sum\", \"onStatisticField\":\"panelen\", \"outStatisticFieldName\":\"tot_panelen\"}]"
+								},
+								{
+									"key": "groupByFieldsForStatistics",
+									"value": "functie"
+								},
+								{
+									"key": "f",
+									"value": "pjson"
+								},
+								{
+									"disabled": true
+								}
+							]
+						},
+						"description": "Het totaal aantal panelen op grote daken (in potentie) per functie."
+					},
+					"response": []
+				},
+				{
+					"name": "Grote daken binnen één kilometer van het Binnenhof",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/0/query?where=1=1&geometryType=esriGeometryPoint&geometry=4.313, 52.080&inSR=4326&distance=1000&units=esriSRUnit_Meter&f=geojson",
+							"protocol": "https",
+							"host": [
+								"geoservices",
+								"zuid-holland",
+								"nl"
+							],
+							"path": [
+								"arcgis",
+								"rest",
+								"services",
+								"Ruimte",
+								"Zonnewijzer",
+								"FeatureServer",
+								"0",
+								"query"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "1=1"
+								},
+								{
+									"key": "geometryType",
+									"value": "esriGeometryPoint"
+								},
+								{
+									"key": "geometry",
+									"value": "4.313, 52.080"
+								},
+								{
+									"key": "inSR",
+									"value": "4326"
+								},
+								{
+									"key": "distance",
+									"value": "1000"
+								},
+								{
+									"key": "units",
+									"value": "esriSRUnit_Meter"
+								},
+								{
+									"key": "f",
+									"value": "geojson"
+								}
+							]
+						},
+						"description": "Alle grote daken binnen een straal van één kilometer van het Binnenhof in GeoJSON formaat."
+					},
+					"response": []
+				},
+				{
+					"name": "Grote daken tussen de intercity stations in Den Haag",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/0/query?where=1=1&geometry={\"rings\": [[[4.343,52.079],[4.325,52.080],[4.323,52.070],[4.343,52.079]]]}&geometryType=esriGeometryPolygon&inSR=4326&spatialRel=esriSpatialRelIntersects&f=geojson",
+							"protocol": "https",
+							"host": [
+								"geoservices",
+								"zuid-holland",
+								"nl"
+							],
+							"path": [
+								"arcgis",
+								"rest",
+								"services",
+								"Ruimte",
+								"Zonnewijzer",
+								"FeatureServer",
+								"0",
+								"query"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "1=1"
+								},
+								{
+									"key": "geometry",
+									"value": "{\"rings\": [[[4.343,52.079],[4.325,52.080],[4.323,52.070],[4.343,52.079]]]}"
+								},
+								{
+									"key": "geometryType",
+									"value": "esriGeometryPolygon"
+								},
+								{
+									"key": "inSR",
+									"value": "4326"
+								},
+								{
+									"key": "spatialRel",
+									"value": "esriSpatialRelIntersects"
+								},
+								{
+									"key": "f",
+									"value": "geojson"
+								}
+							]
+						},
+						"description": "Alle grote daken in het gebied tussen de drie intercity stations (Centraal, Holland Spoor en Laan van NOI) in Den Haag."
+					},
+					"response": []
+				},
+				{
+					"name": "Totaal vermogen van zonnepanelen op grote daken tussen de intercity stations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://geoservices.zuid-holland.nl/arcgis/rest/services/Ruimte/Zonnewijzer/FeatureServer/0/query?where=1=1&geometry={\"rings\": [[[4.343,52.079],[4.325,52.080],[4.323,52.070],[4.343,52.079]]]}&geometryType=esriGeometryPolygon&inSR=4326&spatialRel=esriSpatialRelIntersects&outStatistics=[{\"statisticType\":\"sum\", \"onStatisticField\":\"vermogen_kwp\", \"outStatisticFieldName\":\"tot_vermogen\"}]&f=geojson",
+							"protocol": "https",
+							"host": [
+								"geoservices",
+								"zuid-holland",
+								"nl"
+							],
+							"path": [
+								"arcgis",
+								"rest",
+								"services",
+								"Ruimte",
+								"Zonnewijzer",
+								"FeatureServer",
+								"0",
+								"query"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "1=1"
+								},
+								{
+									"key": "geometry",
+									"value": "{\"rings\": [[[4.343,52.079],[4.325,52.080],[4.323,52.070],[4.343,52.079]]]}"
+								},
+								{
+									"key": "geometryType",
+									"value": "esriGeometryPolygon"
+								},
+								{
+									"key": "inSR",
+									"value": "4326"
+								},
+								{
+									"key": "spatialRel",
+									"value": "esriSpatialRelIntersects"
+								},
+								{
+									"key": "outStatistics",
+									"value": "[{\"statisticType\":\"sum\", \"onStatisticField\":\"vermogen_kwp\", \"outStatisticFieldName\":\"tot_vermogen\"}]"
+								},
+								{
+									"key": "f",
+									"value": "geojson"
+								}
+							]
+						},
+						"description": "Het totaal vermogen (kWp) dat in theorie opgewekt zou kunnen worden door zonnepanelen op de grote daken tussen de drie intercity stations in Den Haag."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LocatieServer",
+			"item": [
+				{
+					"name": "Zoeken op adres",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://geodata.nationaalgeoregister.nl/locatieserver/v3/free?q=Sint Jansstraat 4 Groningen",
+							"protocol": "https",
+							"host": [
+								"geodata",
+								"nationaalgeoregister",
+								"nl"
+							],
+							"path": [
+								"locatieserver",
+								"v3",
+								"free"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "Sint Jansstraat 4 Groningen"
+								}
+							]
+						},
+						"description": "Vrij zoeken op adres."
+					},
+					"response": []
+				},
+				{
+					"name": "Zoeken op adres - beknopte zoekresultaten",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://geodata.nationaalgeoregister.nl/locatieserver/v3/free?q=Sint Jansstraat 4 Groningen&fl=weergavenaam, type&rows=5",
+							"protocol": "https",
+							"host": [
+								"geodata",
+								"nationaalgeoregister",
+								"nl"
+							],
+							"path": [
+								"locatieserver",
+								"v3",
+								"free"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "Sint Jansstraat 4 Groningen"
+								},
+								{
+									"key": "fl",
+									"value": "weergavenaam, type"
+								},
+								{
+									"key": "rows",
+									"value": "5"
+								}
+							]
+						},
+						"description": "Zoeken op adres waarbij alleen de eerste vijf zoekresultaten geretourneerd worden en alleen de attributen weergavenaam en type in het zoekresultaat worden opgenomen."
+					},
+					"response": []
+				},
+				{
+					"name": "Zoeken op adressen in de BAG",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://geodata.nationaalgeoregister.nl/locatieserver/v3/free?q=Sint Jansstraat 4 Groningen&fl=weergavenaam, buurtnaam, wijknaam, gemeentenaam, provincienaam, type, score&fq=type:adres AND bron:BAG&rows=1",
+							"protocol": "https",
+							"host": [
+								"geodata",
+								"nationaalgeoregister",
+								"nl"
+							],
+							"path": [
+								"locatieserver",
+								"v3",
+								"free"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "Sint Jansstraat 4 Groningen"
+								},
+								{
+									"key": "fl",
+									"value": "weergavenaam, buurtnaam, wijknaam, gemeentenaam, provincienaam, type, score"
+								},
+								{
+									"key": "fq",
+									"value": "type:adres AND bron:BAG"
+								},
+								{
+									"key": "rows",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Zoeken op adressen in de BAG."
+					},
+					"response": []
+				},
+				{
+					"name": "Geometrie van een adres",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://geodata.nationaalgeoregister.nl/locatieserver/v3/free?q=Sint Jansstraat 4 Groningen&fl=weergavenaam, centroide_ll, centroide_rd, type&fq=type:adres AND bron:BAG&rows=1",
+							"protocol": "https",
+							"host": [
+								"geodata",
+								"nationaalgeoregister",
+								"nl"
+							],
+							"path": [
+								"locatieserver",
+								"v3",
+								"free"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "Sint Jansstraat 4 Groningen"
+								},
+								{
+									"key": "fl",
+									"value": "weergavenaam, centroide_ll, centroide_rd, type"
+								},
+								{
+									"key": "fq",
+									"value": "type:adres AND bron:BAG"
+								},
+								{
+									"key": "rows",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Locatie van een adres in WGS84 en RD New coördinatenstelsel."
+					},
+					"response": []
+				},
+				{
+					"name": "Geometrie van een weg",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://geodata.nationaalgeoregister.nl/locatieserver/v3/free?q=Sint Jansstraat Groningen&fl=weergavenaam, centroide_ll, centroide_rd, geometrie_ll, geometrie_rd,  type&fq=type:weg&rows=1",
+							"protocol": "https",
+							"host": [
+								"geodata",
+								"nationaalgeoregister",
+								"nl"
+							],
+							"path": [
+								"locatieserver",
+								"v3",
+								"free"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "Sint Jansstraat Groningen"
+								},
+								{
+									"key": "fl",
+									"value": "weergavenaam, centroide_ll, centroide_rd, geometrie_ll, geometrie_rd,  type"
+								},
+								{
+									"key": "fq",
+									"value": "type:weg"
+								},
+								{
+									"key": "rows",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Geometrie van een weg. Punten (centroïden) en lijnen."
+					},
+					"response": []
+				},
+				{
+					"name": "Zoekresultaten zonder exacte match",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://geodata.nationaalgeoregister.nl/locatieserver/v3/free?q=St Jansstr 4 Groningen&fq=type:adres&rows=1",
+							"protocol": "https",
+							"host": [
+								"geodata",
+								"nationaalgeoregister",
+								"nl"
+							],
+							"path": [
+								"locatieserver",
+								"v3",
+								"free"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "St Jansstr 4 Groningen"
+								},
+								{
+									"key": "fq",
+									"value": "type:adres"
+								},
+								{
+									"key": "rows",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Zoeken op een adres zonder exacte match in de BAG."
+					},
+					"response": []
+				},
+				{
+					"name": "Zoeken op basis van postcode en huisnummer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://geodata.nationaalgeoregister.nl/locatieserver/v3/free?q=9712JN 4&fl=*&fq=type:adres&rows=1",
+							"protocol": "https",
+							"host": [
+								"geodata",
+								"nationaalgeoregister",
+								"nl"
+							],
+							"path": [
+								"locatieserver",
+								"v3",
+								"free"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "9712JN 4"
+								},
+								{
+									"key": "fl",
+									"value": "*"
+								},
+								{
+									"key": "fq",
+									"value": "type:adres"
+								},
+								{
+									"key": "rows",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Zoeken naar een adres op basis van postcode en huisnummer."
+					},
+					"response": []
+				},
+				{
+					"name": "Zoeken binnen één provincie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://geodata.nationaalgeoregister.nl/locatieserver/v3/free?q=Sint Jansstraat AND provincienaam:Zuid-Holland &fl=weergavenaam, type, provincienaam, score&fq=type:weg&rows=1",
+							"protocol": "https",
+							"host": [
+								"geodata",
+								"nationaalgeoregister",
+								"nl"
+							],
+							"path": [
+								"locatieserver",
+								"v3",
+								"free"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "Sint Jansstraat AND provincienaam:Zuid-Holland "
+								},
+								{
+									"key": "fl",
+									"value": "weergavenaam, type, provincienaam, score"
+								},
+								{
+									"key": "fq",
+									"value": "type:weg"
+								},
+								{
+									"key": "rows",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Niet zoeken binnen heel Nederland, maar binnen een specifieke provincie."
+					},
+					"response": []
+				},
+				{
+					"name": "Zoeken binnen één provincie - met aanhalingstekens",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://geodata.nationaalgeoregister.nl/locatieserver/v3/free?q=Sint Jansstraat AND provincienaam:\"Zuid-Holland\" &fl=weergavenaam, type, provincienaam, score&fq=type:weg&rows=1",
+							"protocol": "https",
+							"host": [
+								"geodata",
+								"nationaalgeoregister",
+								"nl"
+							],
+							"path": [
+								"locatieserver",
+								"v3",
+								"free"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "Sint Jansstraat AND provincienaam:\"Zuid-Holland\" "
+								},
+								{
+									"key": "fl",
+									"value": "weergavenaam, type, provincienaam, score"
+								},
+								{
+									"key": "fq",
+									"value": "type:weg"
+								},
+								{
+									"key": "rows",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Zoeken binnen één provincie. "
+					},
+					"response": []
+				},
+				{
+					"name": "Zoeken naar woonplaats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://geodata.nationaalgeoregister.nl/locatieserver/v3/free?q=woonplaatsnaam:Winsum&fl=weergavenaam, type, provincienaam&fq=type:woonplaats",
+							"protocol": "https",
+							"host": [
+								"geodata",
+								"nationaalgeoregister",
+								"nl"
+							],
+							"path": [
+								"locatieserver",
+								"v3",
+								"free"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "woonplaatsnaam:Winsum"
+								},
+								{
+									"key": "fl",
+									"value": "weergavenaam, type, provincienaam"
+								},
+								{
+									"key": "fq",
+									"value": "type:woonplaats"
+								}
+							]
+						},
+						"description": "Zoeken naar woonplaats 'Winsum'."
+					},
+					"response": []
+				},
+				{
+					"name": "Zoeken met behulp van synoniemen",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://geodata.nationaalgeoregister.nl/locatieserver/v3/free?q=woonplaatsnaam:Den Bosch&fl=weergavenaam, type&fq=type:woonplaats",
+							"protocol": "https",
+							"host": [
+								"geodata",
+								"nationaalgeoregister",
+								"nl"
+							],
+							"path": [
+								"locatieserver",
+								"v3",
+								"free"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "woonplaatsnaam:Den Bosch"
+								},
+								{
+									"key": "fl",
+									"value": "weergavenaam, type"
+								},
+								{
+									"key": "fq",
+									"value": "type:woonplaats"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Zoeken naar Zuid-Hollandplein 1 Den Haag",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://geodata.nationaalgeoregister.nl/locatieserver/v3/free?q=straatnaam=\"Zuid-Hollandplein\" AND huis_nlt=1 AND woonplaatsnaam:\"Den Haag\"&fl=weergavenaam, type, woonplaatscode, centroide_ll&fq=type:adres",
+							"protocol": "https",
+							"host": [
+								"geodata",
+								"nationaalgeoregister",
+								"nl"
+							],
+							"path": [
+								"locatieserver",
+								"v3",
+								"free"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "straatnaam=\"Zuid-Hollandplein\" AND huis_nlt=1 AND woonplaatsnaam:\"Den Haag\""
+								},
+								{
+									"key": "fl",
+									"value": "weergavenaam, type, woonplaatscode, centroide_ll"
+								},
+								{
+									"key": "fq",
+									"value": "type:adres"
+								}
+							]
+						},
+						"description": "Zoeken naar woonplaatscode en coördinaten van Zuid-Hollandplein 1 Den Haag."
+					},
+					"response": []
+				},
+				{
+					"name": "Dichtsbijzijnde hectometerpaal 53.196551 | Lengtegraad: 6.524544",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://geodata.nationaalgeoregister.nl/locatieserver/v3/free?fq=type:hectometerpaal&lat=53.197&lon=6.525&fl=bron, hectometernummer, wegnummer, weergavenaam&rows=1",
+							"protocol": "https",
+							"host": [
+								"geodata",
+								"nationaalgeoregister",
+								"nl"
+							],
+							"path": [
+								"locatieserver",
+								"v3",
+								"free"
+							],
+							"query": [
+								{
+									"key": "fq",
+									"value": "type:hectometerpaal"
+								},
+								{
+									"key": "lat",
+									"value": "53.197"
+								},
+								{
+									"key": "lon",
+									"value": "6.525"
+								},
+								{
+									"key": "fl",
+									"value": "bron, hectometernummer, wegnummer, weergavenaam"
+								},
+								{
+									"key": "rows",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Wegen rondom het Binnenhof",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://geodata.nationaalgeoregister.nl/locatieserver/v3/free?fl=weergavenaam&fq=bron:NWB and type:weg&lat=52.080&lon=4.313",
+							"protocol": "https",
+							"host": [
+								"geodata",
+								"nationaalgeoregister",
+								"nl"
+							],
+							"path": [
+								"locatieserver",
+								"v3",
+								"free"
+							],
+							"query": [
+								{
+									"key": "fl",
+									"value": "weergavenaam"
+								},
+								{
+									"key": "fq",
+									"value": "bron:NWB and type:weg"
+								},
+								{
+									"key": "lat",
+									"value": "52.080"
+								},
+								{
+									"key": "lon",
+									"value": "4.313"
+								}
+							]
+						},
+						"description": "De tien wegen die het dichtst bij het Binnenhof liggen."
+					},
+					"response": []
+				},
+				{
+					"name": "Suggesties bij zoeken naar een adres",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://geodata.nationaalgeoregister.nl/locatieserver/v3/suggest?q=Jan&fq=type:adres",
+							"protocol": "https",
+							"host": [
+								"geodata",
+								"nationaalgeoregister",
+								"nl"
+							],
+							"path": [
+								"locatieserver",
+								"v3",
+								"suggest"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "Jan"
+								},
+								{
+									"key": "fq",
+									"value": "type:adres"
+								}
+							]
+						},
+						"description": "Suggesties bij het zoeken naar een adres."
+					},
+					"response": []
+				},
+				{
+					"name": "Suggesties bij het zoeken naar een adres binnen de stad Groningen",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://geodata.nationaalgeoregister.nl/locatieserver/v3/suggest?q=Sint Jan 4 AND woonplaatsnaam:Groningen&fq=type:adres",
+							"protocol": "https",
+							"host": [
+								"geodata",
+								"nationaalgeoregister",
+								"nl"
+							],
+							"path": [
+								"locatieserver",
+								"v3",
+								"suggest"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "Sint Jan 4 AND woonplaatsnaam:Groningen"
+								},
+								{
+									"key": "fq",
+									"value": "type:adres"
+								}
+							]
+						},
+						"description": "Suggesties bij het zoeken naar een adres binnen de stad Groningen."
+					},
+					"response": []
+				},
+				{
+					"name": "Detailinformatie van een adres",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://geodata.nationaalgeoregister.nl/locatieserver/v3/lookup?id=adr-ddd2067f9f58de177db654e421cee64c",
+							"protocol": "https",
+							"host": [
+								"geodata",
+								"nationaalgeoregister",
+								"nl"
+							],
+							"path": [
+								"locatieserver",
+								"v3",
+								"lookup"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "adr-ddd2067f9f58de177db654e421cee64c"
+								}
+							]
+						},
+						"description": "Opvragen van detailinformatie over en adres via de LocatieServer lookup service."
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
