@@ -1,6 +1,8 @@
 # Web API's 
 
-Workshop voor Provincie Zuid-Holland - 14 februari 2019 - 10:00-13:00 
+Workshop voor Provincie Zuid-Holland - 14 februari 2019 - 10:00-13:00  en 7 maart 12:30-15.30
+
+
 #### Door: Willy Tadema
 
 # Presentatie
