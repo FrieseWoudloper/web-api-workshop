@@ -7,7 +7,7 @@ Workshop voor Provincie Zuid-Holland - 14 februari 2019 - 10:00-13:00  en 7 maar
 
 # Presentatie
 
-De [slides](slides/presentatie web api's.pdf) van mijn presentatie.
+De [slides](https://github.com/FrieseWoudloper/web-api-workshop/blob/master/slides/Presentatie%20Web%20API's.pdf) van mijn presentatie staan in deze repo.
 
 # Workshop
 
