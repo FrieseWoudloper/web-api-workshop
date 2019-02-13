@@ -1646,6 +1646,300 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Dataloket",
+			"item": [
+				{
+					"name": "Zoeken op trefwoord",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL Dataloket API}}/search?query=energie&offset=1",
+							"host": [
+								"{{URL Dataloket API}}"
+							],
+							"path": [
+								"search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "energie"
+								},
+								{
+									"key": "offset",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Zoeken op het trefwoord 'energie'."
+					},
+					"response": []
+				},
+				{
+					"name": "Thesaurus opvragen",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL Dataloket API}}/thesaurus",
+							"host": [
+								"{{URL Dataloket API}}"
+							],
+							"path": [
+								"thesaurus"
+							]
+						},
+						"description": "Thesaurus opvragen. De thesaurus bevat alle geldige tags die je aan een item in het Dataloket kunt koppelen."
+					},
+					"response": []
+				},
+				{
+					"name": "Thema's opvragen",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL Dataloket API}}/tags",
+							"host": [
+								"{{URL Dataloket API}}"
+							],
+							"path": [
+								"tags"
+							]
+						},
+						"description": "Thema's opvragen. Ieder item valt binnen één of meerdere thema's."
+					},
+					"response": []
+				},
+				{
+					"name": "Item aanmaken",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "access",
+									"value": "Openbaar",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Test 1",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Een website om te testen: http://www.test.nl",
+									"type": "text"
+								},
+								{
+									"key": "contentTypeName",
+									"value": "Website",
+									"type": "text"
+								},
+								{
+									"key": "sourceTags",
+									"value": "energie, infrastructuur",
+									"type": "text"
+								},
+								{
+									"key": "themes",
+									"value": "Bestuur en Middelen,  Wonen",
+									"type": "text"
+								},
+								{
+									"key": "contactPersoon",
+									"value": "T. Ester",
+									"type": "text"
+								},
+								{
+									"key": "document",
+									"type": "file",
+									"src": ""
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL Dataloket API}}/documents/upload",
+							"host": [
+								"{{URL Dataloket API}}"
+							],
+							"path": [
+								"documents",
+								"upload"
+							]
+						},
+						"description": "Item aanmaken in het Dataloket. Het item bevat alleen metadata, géén bestand."
+					},
+					"response": []
+				},
+				{
+					"name": "Item aanmaken en bestand uploaden",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "access",
+									"value": "Bedrijfsvertrouwelijk",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Test 2 ",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Dit is een test in het kader van de web api workshop. Kijken of het lukt om een bestand te uploaden.",
+									"type": "text"
+								},
+								{
+									"key": "contentTypeName",
+									"value": "Dataset",
+									"type": "text"
+								},
+								{
+									"key": "sourceTags",
+									"value": "aanbesteden",
+									"type": "text"
+								},
+								{
+									"key": "themes",
+									"value": "Energie, Groen, Demografie",
+									"type": "text"
+								},
+								{
+									"key": "contactPersoon",
+									"value": "T. Ester",
+									"type": "text"
+								},
+								{
+									"key": "document",
+									"type": "file",
+									"src": "test.csv"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL Dataloket API}}/documents/upload",
+							"host": [
+								"{{URL Dataloket API}}"
+							],
+							"path": [
+								"documents",
+								"upload"
+							]
+						},
+						"description": "Item aanmaken in het Dataloket, inclusief uploaden van bestand."
+					},
+					"response": []
+				},
+				{
+					"name": "Items van gebruiker opvragen",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL Dataloket API}}/documents/user?offset=1",
+							"host": [
+								"{{URL Dataloket API}}"
+							],
+							"path": [
+								"documents",
+								"user"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Alle items opvragen die de gebruiker waarvan het token is, heeft aangemaakt in het Dataloket."
+					},
+					"response": []
+				},
+				{
+					"name": "Item verwijderen",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{URL Dataloket API}}/documents/upload/{{contentUID}}",
+							"host": [
+								"{{URL Dataloket API}}"
+							],
+							"path": [
+								"documents",
+								"upload",
+								"{{contentUID}}"
+							]
+						},
+						"description": "Verwijderen van een item. Het item wordt geïdentificeerd op basis van het contentUID. Vervang {{contentUID}} door identificatienummer van het betreffende item."
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
