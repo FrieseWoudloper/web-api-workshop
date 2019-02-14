@@ -7,7 +7,7 @@ Door: [Willy Tadema](https://www.linkedin.com/in/willytadema/) met hulp van [Nie
 
 # Workshop
 
-De workshop kan je [>HIER<](https://github.com/friesewoudloper/web-api-workshop/wiki) vinden.
+De workshop vind je [>HIER<](https://github.com/friesewoudloper/web-api-workshop/wiki).
 
 # Presentatie
 
