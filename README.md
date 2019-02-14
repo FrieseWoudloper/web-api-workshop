@@ -3,7 +3,7 @@
 Workshop voor de Provincie Zuid-Holland op 14 februari 2019 van 10:00-13:00 en 7 maart van 12:30-15.30 uur.
 
 
-Door: [Willy Tadema](https://www.linkedin.com/in/willytadema/) met hulp van [Niene Boeijen](http://www.github.com/nieneb) en [Bilal Khalil](https://www.linkedin.com/in/bilal-khalil-07898b41/)
+Door: [Willy Tadema](https://www.linkedin.com/in/willytadema/) met hulp van [Niene Boeijen](http://www.github.com/nieneb) en [Bilal Khalil](https://www.linkedin.com/in/bilal-khalil-07898b41/).
 
 # Workshop
 
